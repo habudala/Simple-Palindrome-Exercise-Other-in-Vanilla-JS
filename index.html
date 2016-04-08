@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style> h1 {font-size: 40px</style>
+</head>
+<body>
+<h1 id="h1"></h1>
+<h1 id="h2"></h1>
+
+<input type="text" id="input" placeholder="enter word"/>
+<input type="button" id="myButton" value="submit word" />
+
+<h1 id="h3">Enter word and let's find out if it's a palindrome</h1>
+
+<script type="text/javascript">
+	var str = "My name is Laszlo Habuda";
+	var str2 = "My Name is Laszlo Habuda";
+
+	function func () {
+		str = str.toLowerCase();
+		str = str.split(" ").reverse().join(" ");
+			// console.log(str);
+		}
+		func();
+
+		document.getElementById("h1").innerHTML = str;
+
+
+	function mine () {
+		str2 = str2.replace(/ /g,"");
+		console.log(str2)
+	}
+	mine();
+
+	document.getElementById("h2").innerHTML = str2;
+
+	
+
+
+
+	document.getElementById("myButton").addEventListener("click", function(){
+		var input = document.getElementById("input").value;
+		var against =input;
+		against = against.split("").reverse().join("");
+		if(input === against) {document.getElementById("h3").innerHTML = "It's a polidrome"} else {document.getElementById("h3").innerHTML = "It's NOT a polidrome!";}
+	})
+</script>
+</body>
+</html>
